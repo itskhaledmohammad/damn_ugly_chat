@@ -2,7 +2,7 @@
 Type Here:<input type="textbox" onkeydown="if(event.keyCode == 13)document.getElementById('send').click()">
 <button id="send">Send</button>
 (Type in the message and press "enter" key, that will work too.)
-<div id="messages"></div>
+<div id="messages" style="height:300px;width:100%;overflow:auto;"></div>
 <script>
 function gimmeTime(){
      var now    = new Date();
@@ -19,8 +19,9 @@ function gimmeTime(){
      var timeString = hour + ':' + minute + ':' + second + " " + ap;
      return timeString;
     }
-    document.querySelector("button").onclick = function(){
-    document.querySelector("div").innerHTML += gimmeTime() + " : " + "<b>" +  document.querySelector("input").value + "</b>" + "</br>";
+    document.querySelector("#send").onclick = function(){
+    document.querySelector("#messages").innerHTML += gimmeTime() + " : " + "<b>" +  document.querySelector("input").value + "</b>" + "</br>";
     document.querySelector("input").value = "";
+    document.querySelector("#messages").scrollTop = document.querySelector("#messages").scrollHeight;
 }
 </script>
