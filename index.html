@@ -20,7 +20,7 @@ function gimmeTime(){
      return timeString;
     }
     document.querySelector("button").onclick = function(){
-    document.querySelector("div").innerHTML += gimmeTime() + " : " + "<b>" +  document.querySelector("input").value + "</br>";
+    document.querySelector("div").innerHTML += gimmeTime() + " : " + "<b>" +  document.querySelector("input").value + "</b>" + "</br>";
     document.querySelector("input").value = "";
 }
 </script>
