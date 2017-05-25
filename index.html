@@ -1,0 +1,11 @@
+<h1 style="text-align:center"><u style="background: #d19200; /* Old browsers */ background: -moz-linear-gradient(top, #d19200 0%, #00ff48 20%, #d800a2 41%, #00d4ff 57%, #808c00 86%, #db00c1 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(top, #d19200 0%,#00ff48 20%,#d800a2 41%,#00d4ff 57%,#808c00 86%,#db00c1 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to bottom, #d19200 0%,#00ff48 20%,#d800a2 41%,#00d4ff 57%,#808c00 86%,#db00c1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d19200', endColorstr='#db00c1',GradientType=0 ); /* IE6-9 */">Damn Ugly Chat!</u></h1>
+Type Here:<input type="textbox" onkeydown="if(event.keyCode == 13)document.getElementById('send').click()">
+<button id="send">Send</button>
+(Type in the message and press "enter" key, that will work too.)
+<div id="messages"></div>
+<script>
+    document.querySelector("button").onclick = function(){
+    document.querySelector("div").innerHTML +=  document.querySelector("input").value + "</br>";
+    document.querySelector("input").value = "";
+}
+</script>
