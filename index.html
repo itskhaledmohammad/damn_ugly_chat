@@ -4,8 +4,23 @@ Type Here:<input type="textbox" onkeydown="if(event.keyCode == 13)document.getEl
 (Type in the message and press "enter" key, that will work too.)
 <div id="messages"></div>
 <script>
+function gimmeTime(){
+     var now    = new Date();
+     var hour   = now.getHours();
+     var minute = now.getMinutes();
+     var second = now.getSeconds();
+     var ap = "AM";
+     if (hour   > 11) { ap = "PM";             }
+     if (hour   > 12) { hour = hour - 12;      }
+     if (hour   == 0) { hour = 12;             }
+     if (hour   < 10) { hour   = "0" + hour;   }
+     if (minute < 10) { minute = "0" + minute; }
+     if (second < 10) { second = "0" + second; }
+     var timeString = hour + ':' + minute + ':' + second + " " + ap;
+     return timeString;
+    }
     document.querySelector("button").onclick = function(){
-    document.querySelector("div").innerHTML +=  document.querySelector("input").value + "</br>";
+    document.querySelector("div").innerHTML += gimmeTime() + " : " + "<b>" +  document.querySelector("input").value + "</br>";
     document.querySelector("input").value = "";
 }
 </script>
